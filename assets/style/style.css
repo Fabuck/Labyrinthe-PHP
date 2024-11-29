@@ -1,0 +1,21 @@
+article {
+  display: flex;
+}
+
+div {
+  width: 50px;
+  height: 40px;
+  text-align: center;
+}
+
+.joueur {
+  width: 50px;
+  height: 40px;
+  text-align: center;
+}
+
+
+.un {
+  background-color: darkred !important;
+  color: darkred;
+}
