@@ -13,17 +13,23 @@ include('./controller/move.php');
 </head>
 
 <body>
-    <?php displayArray($_SESSION["grille"]) ?>
+    <section>
+        <?php displayArray($_SESSION["grille"]) ?>
+    </section>
     <form method="POST">
-        <button name="direction" value="haut">Haut</button>
-        <button name="direction" value="gauche">Gauche</button>
-        <button name="direction" value="bas">Bas</button>
-        <button name="direction" value="droite">Droite</button>
+        <div class="fleches">
+            <button name="direction" value="haut">↑</button>
+            <div class="gaucheDroite">
+                <button name="direction" value="gauche">←</button>
+                <button name="direction" value="droite">→</button>
+            </div>
+            <button name="direction" value="bas">↓</button>
+        </div>
     </form>
-
-    <form method="POST" >
-        <button name="restart" value="restart">Recommencer</button>
+    <form method="POST">
+        <button name="restart" value="restart" class="restart" >Recommencer</button>
     </form>
 </body>
 <source src="" type="audio/mpeg">
+
 </html>

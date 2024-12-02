@@ -2,7 +2,17 @@ article {
   display: flex;
 }
 
-div {
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.fog,
+.un,
+.zero {
   width: 50px;
   height: 40px;
   text-align: center;
@@ -14,18 +24,50 @@ div {
   text-align: center;
 }
 
-
 .un {
   background-color: darkred !important;
   color: darkred;
 }
 
-
 .fog {
-  background-color: #333; /* Couleur sombre pour représenter le brouillard */
-  opacity: 0.8; /* Optionnel, pour donner un effet de transparence */
-  width: 50px; /* Ajustez selon votre design */
+  background-color: #333;
+  opacity: 0.8;
+  width: 50px;
   height: 40px;
-  border: 1px solid #555; /* Bordure pour différencier les cases */
   display: inline-block;
+  filter: blur(40px);
+}
+
+.fleches {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  align-items: center;
+  margin: auto;
+  gap: 10px;
+  text-align: center;
+}
+
+.gaucheDroite {
+  display: flex;
+  gap: 100px;
+}
+
+.fleches button {
+  font-size: 50px;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  align-items: center;
+justify-content: center;
+}
+
+.restart{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: rgb(37, 150, 190);
+  color: white;
+border-radius: 50px;
+font-size: 20px;
 }

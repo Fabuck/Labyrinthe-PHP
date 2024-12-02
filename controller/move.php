@@ -57,7 +57,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['posSouris'][0]["x"] = $newX;
             $_SESSION['posSouris'][0]["y"] = $newY;
             $_SESSION['grille'][$newX][$newY] = "X";
-        } else {
+        } if($_SESSION['grille'][$newX][$newY] === "S"){
+            header("Location: ./pages/victory.php");
+        }
+         else {
             echo '<audio autoplay>
             <source src="./assets/audio/audio.mp3" type="audio/mpeg">
           </audio>';
