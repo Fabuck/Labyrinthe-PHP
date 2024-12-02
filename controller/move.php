@@ -69,18 +69,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 function displayArray($array)
 {
-    foreach ($array as $row) {
-        echo ("<article>");
-        foreach ($row as $cell) {
-            if ($cell === 1) {
-                echo ("<div class='un'>" . "" . "</div>");
-            } else if($cell === 0) {
-                echo ("<div class='zero'>" . " ". "</div>");
-            } else if  ($cell ==='X') {
-                echo ("<img class='joueur' src='./assets/img/lemmiwinks.webp'  ></img>");
-            } else {
-                echo ("<img class='joueur' src='./assets/img/sacha.webp'  ></img>");
+    $posX = $_SESSION['posSouris'][0]["x"];
+    $posY = $_SESSION['posSouris'][0]["y"];
+    $radius = 1; // Rayon de visibilité autour du joueur
 
+    foreach ($array as $rowIndex => $row) {
+        echo ("<article>");
+        foreach ($row as $colIndex => $cell) {
+            // Vérifier si la case est dans le champ de vision
+            if (abs($rowIndex - $posX) <= $radius && abs($colIndex - $posY) <= $radius) {
+                // Affichez la case normalement
+                if ($cell === 1) {
+                    echo ("<div class='un'>" . "" . "</div>");
+                } else if ($cell === 0) {
+                    echo ("<div class='zero'>" . " " . "</div>");
+                } else if ($cell === 'X') {
+                    echo ("<img class='joueur' src='./assets/img/lemmiwinks.webp' ></img>");
+                } else {
+                    echo ("<img class='joueur' src='./assets/img/sacha.webp' ></img>");
+                }
+            } else {
+                // Affichez une case masquée (brouillard)
+                echo ("<div class='fog'>" . "" . "</div>");
             }
         }
         echo ("</article>");

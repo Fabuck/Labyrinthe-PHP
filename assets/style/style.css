@@ -19,3 +19,13 @@ div {
   background-color: darkred !important;
   color: darkred;
 }
+
+
+.fog {
+  background-color: #333; /* Couleur sombre pour représenter le brouillard */
+  opacity: 0.8; /* Optionnel, pour donner un effet de transparence */
+  width: 50px; /* Ajustez selon votre design */
+  height: 40px;
+  border: 1px solid #555; /* Bordure pour différencier les cases */
+  display: inline-block;
+}
